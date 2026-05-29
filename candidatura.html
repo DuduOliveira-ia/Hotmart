@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Candidatura · Mentoria Executiva de IA · Eduardo Gonçalves</title>
+<meta name="description" content="Candidate-se à mentoria executiva de IA 1-a-1. Cinco vagas por mês. Antes de qualquer pagamento, alinhamos expectativas para garantir o encaixe.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06170e;--bg-2:#0a2013;--panel:#0a2416;--panel-2:#0c2c1b;
+  --line:rgba(52,211,153,.13);--line-strong:rgba(52,211,153,.30);
+  --cream:#eef4ee;--soft:#c4d9cc;--faint:#96aea0;
+  --emerald:#10b981;--mint:#34d399;--glow:rgba(16,185,129,.4);
+  --err:#f0a3a3;
+  --mono:'JetBrains Mono',ui-monospace,monospace;--serif:'Fraunces',Georgia,serif;--body:'Manrope',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+.bg-fx{position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(700px 480px at 82% -5%,rgba(16,185,129,.14),transparent 60%),radial-gradient(560px 560px at 5% 100%,rgba(52,211,153,.06),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg-2))}
+.grid-fx{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(52,211,153,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(52,211,153,.045) 1px,transparent 1px);
+  background-size:60px 60px;mask-image:radial-gradient(circle at 60% 10%,#000,transparent 80%)}
+.wrap{max-width:680px;margin:0 auto;padding:54px 24px 80px}
+
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:46px}
+.brand{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream);display:flex;align-items:center;gap:9px}
+.brand .dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint)}
+.back{font-family:var(--mono);font-size:12px;color:var(--soft);text-decoration:none}
+.back:hover{color:var(--mint)}
+
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mint);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--mint)}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,5vw,3rem);line-height:1.08;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--mint);font-weight:500}
+.intro{color:var(--soft);font-size:1.05rem;margin-top:18px;font-weight:400;max-width:56ch}
+.intro b{color:var(--cream);font-weight:600}
+
+form{margin-top:42px;display:flex;flex-direction:column;gap:26px}
+.field label{display:block;font-family:var(--body);font-weight:600;font-size:.98rem;color:var(--cream);margin-bottom:9px}
+.field label .req{color:var(--mint)}
+.field .hint{font-size:.84rem;color:var(--faint);font-weight:300;margin-top:-3px;margin-bottom:9px}
+input,select,textarea{width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:11px;padding:14px 16px;color:var(--cream);font-family:var(--body);font-size:1rem;transition:border-color .2s,box-shadow .2s}
+input::placeholder,textarea::placeholder{color:var(--faint)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--mint);box-shadow:0 0 0 3px rgba(52,211,153,.12)}
+textarea{resize:vertical;min-height:96px;line-height:1.5}
+select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%2334d399' stroke-width='2'%3E%3Cpath d='M3 5l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
+select:invalid{color:var(--faint)}
+.field.bad input,.field.bad select,.field.bad textarea{border-color:var(--err);box-shadow:0 0 0 3px rgba(240,163,163,.12)}
+.field .errmsg{display:none;color:var(--err);font-size:.82rem;margin-top:7px}
+.field.bad .errmsg{display:block}
+
+.confirm{background:var(--panel);border:1px solid var(--line-strong);border-radius:12px;padding:18px 20px;display:flex;gap:13px;align-items:flex-start}
+.confirm input[type=checkbox]{width:20px;height:20px;flex:0 0 auto;margin-top:2px;accent-color:var(--mint);cursor:pointer}
+.confirm label{font-weight:400;color:var(--soft);font-size:.96rem;margin:0;cursor:pointer}
+.confirm.bad{border-color:var(--err)}
+
+.btn{font-family:var(--mono);font-size:14px;border:none;cursor:pointer;background:var(--mint);color:#042012;font-weight:600;padding:17px 28px;border-radius:12px;transition:transform .2s,box-shadow .3s;display:inline-flex;align-items:center;justify-content:center;gap:9px;width:100%}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px var(--glow)}
+.privacy{font-size:.82rem;color:var(--faint);text-align:center;font-weight:300;margin-top:-8px}
+
+/* success */
+.success{display:none;text-align:center;padding:30px 0}
+.success.show{display:block;animation:fade .5s ease}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.success .ic{width:64px;height:64px;border-radius:50%;border:2px solid var(--mint);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;color:var(--mint);font-size:28px;box-shadow:0 0 30px var(--glow)}
+.success h2{font-family:var(--serif);font-weight:600;font-size:1.8rem;margin-bottom:14px}
+.success p{color:var(--soft);font-weight:300;max-width:46ch;margin:0 auto 10px}
+.success a.again{display:inline-block;margin-top:18px;font-family:var(--mono);font-size:13px;color:var(--mint);text-decoration:none;border:1px solid var(--line-strong);border-radius:10px;padding:12px 20px}
+.success a.again:hover{border-color:var(--mint)}
+
+footer{text-align:center;color:var(--faint);font-size:12px;margin-top:50px;font-family:var(--mono);letter-spacing:.3px}
+::selection{background:var(--mint);color:#042012}
+</style>
+</head>
+<body>
+<div class="bg-fx"></div>
+<div class="grid-fx"></div>
+
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><span class="dot"></span>Eduardo Gonçalves</div>
+    <a href="index.html" class="back">← voltar</a>
+  </div>
+
+  <div id="formView">
+    <div class="eyebrow">Candidatura · 5 vagas/mês</div>
+    <h1>Vamos <em>alinhar</em> antes de qualquer compromisso.</h1>
+    <p class="intro">Cinco vagas por mês, atendidas 1-a-1. Antes de falar em pagamento, conversamos para confirmar o encaixe. Se não fizer sentido para os dois lados, não avançamos. <b>Leva uns 3 minutos para preencher.</b></p>
+
+    <form id="form" novalidate>
+      <div class="field">
+        <label>Nome completo <span class="req">*</span></label>
+        <input type="text" id="nome" required placeholder="Seu nome">
+        <div class="errmsg">Preencha seu nome.</div>
+      </div>
+
+      <div class="field">
+        <label>WhatsApp <span class="req">*</span></label>
+        <input type="tel" id="whats" required placeholder="(31) 9 9999-9999">
+        <div class="errmsg">Informe um WhatsApp para contato.</div>
+      </div>
+
+      <div class="field">
+        <label>E-mail <span class="req">*</span></label>
+        <input type="email" id="email" required placeholder="voce@email.com">
+        <div class="errmsg">Informe um e-mail válido.</div>
+      </div>
+
+      <div class="field">
+        <label>Como você se descreve hoje? <span class="req">*</span></label>
+        <select id="papel" required>
+          <option value="" disabled selected>Selecione</option>
+          <option>Dono(a) / sócio(a) de empresa</option>
+          <option>Gestor(a) / diretor(a)</option>
+          <option>Profissional liberal / autônomo(a)</option>
+          <option>Outro</option>
+        </select>
+        <div class="errmsg">Escolha uma opção.</div>
+      </div>
+
+      <div class="field">
+        <label>Em que área você atua? <span class="req">*</span></label>
+        <div class="hint">Ex.: advocacia, imobiliário, varejo, consultoria...</div>
+        <input type="text" id="area" required placeholder="Sua área de atuação">
+        <div class="errmsg">Conte sua área de atuação.</div>
+      </div>
+
+      <div class="field">
+        <label>Qual a tarefa que mais consome seu tempo hoje? <span class="req">*</span></label>
+        <div class="hint">Aquela que você adoraria tirar das suas costas.</div>
+        <textarea id="tarefa" required placeholder="Descreva em 2 ou 3 linhas"></textarea>
+        <div class="errmsg">Descreva a tarefa.</div>
+      </div>
+
+      <div class="field">
+        <label>Quanto tempo por semana ela consome? <span class="req">*</span></label>
+        <select id="horas" required>
+          <option value="" disabled selected>Selecione</option>
+          <option>Até 2 horas</option>
+          <option>3 a 5 horas</option>
+          <option>6 a 10 horas</option>
+          <option>Mais de 10 horas</option>
+        </select>
+        <div class="errmsg">Escolha uma faixa.</div>
+      </div>
+
+      <div class="field">
+        <label>Você já usa alguma IA no trabalho? Qual? <span class="req">*</span></label>
+        <input type="text" id="usaia" required placeholder="Ex.: ChatGPT às vezes / Nenhuma ainda">
+        <div class="errmsg">Responda, mesmo que seja "nenhuma".</div>
+      </div>
+
+      <div class="field">
+        <label>O que te fez buscar isso agora? <span class="req">*</span></label>
+        <textarea id="motivo" required placeholder="O que mudou, ou o que te incomoda hoje"></textarea>
+        <div class="errmsg">Conte o que te trouxe aqui.</div>
+      </div>
+
+      <div class="field">
+        <label>Disponibilidade para 3 sessões 1-a-1 ao vivo nas próximas semanas? <span class="req">*</span></label>
+        <select id="disp" required>
+          <option value="" disabled selected>Selecione</option>
+          <option>Sim, tenho disponibilidade</option>
+          <option>Provavelmente, depende dos horários</option>
+          <option>Ainda não sei</option>
+        </select>
+        <div class="errmsg">Escolha uma opção.</div>
+      </div>
+
+      <div class="confirm field" id="confirmWrap">
+        <input type="checkbox" id="confirma" required>
+        <label for="confirma">Entendo que esta é uma mentoria de <b style="color:var(--cream)">implementação</b> — não um curso nem um certificado — e topo colocar a mão durante as sessões.</label>
+      </div>
+
+      <button type="submit" class="btn">Enviar candidatura →</button>
+      <p class="privacy">Suas respostas são enviadas com segurança e analisadas pessoalmente pelo Eduardo. Sem cadastro, sem spam.</p>
+    </form>
+  </div>
+
+  <div class="success" id="successView">
+    <div class="ic">✓</div>
+    <h2>Obrigado pelo interesse.</h2>
+    <p>Sua candidatura foi <b style="color:var(--cream)">registrada</b>. Como são apenas 5 vagas por mês, eu mesmo analiso cada uma — você recebe um retorno em até <b style="color:var(--cream)">24 horas</b> pelo contato que informou.</p>
+  </div>
+
+  <footer>© 2026 Eduardo Gonçalves · Belo Horizonte, MG</footer>
+</div>
+
+<script>
+/* ====== CONFIGURAÇÃO — EDITE AQUI ======
+   Coloque o número com DDI + DDD, só dígitos. Ex.: Brasil (31) 99999-9999 -> "5531999999999" */
+const WHATSAPP = "5531992650324";
+const EMAIL_FALLBACK = "oliveirae.ti@gmail.com";
+/* URL do Web App do Google Apps Script (passo a passo em
+   INSTRUCOES_Planilha_Candidaturas.md). Enquanto estiver vazia, o lead NÃO é gravado. */
+const SHEET_ENDPOINT = "";
+/* ======================================= */
+
+const form = document.getElementById('form');
+const fields = ['nome','whats','email','papel','area','tarefa','horas','usaia','motivo','disp'];
+const labels = {
+  nome:'Nome', whats:'WhatsApp', email:'E-mail', papel:'Perfil', area:'Área de atuação',
+  tarefa:'Tarefa que mais consome tempo', horas:'Horas/semana',
+  usaia:'Já usa IA?', motivo:'Por que agora', disp:'Disponibilidade p/ 3 sessões'
+};
+
+function markBad(id,bad){
+  const el = document.getElementById(id);
+  const wrap = el.closest('.field');
+  if(wrap) wrap.classList.toggle('bad', bad);
+}
+function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  let ok = true;
+  fields.forEach(id=>{
+    const v = document.getElementById(id).value.trim();
+    let bad = (v === '');
+    if(id === 'email' && v !== '' && !validEmail(v)) bad = true;
+    markBad(id, bad);
+    if(bad) ok = false;
+  });
+  const conf = document.getElementById('confirma');
+  const confBad = !conf.checked;
+  document.getElementById('confirmWrap').classList.toggle('bad', confBad);
+  if(confBad) ok = false;
+
+  if(!ok){
+    const firstBad = document.querySelector('.field.bad');
+    if(firstBad) firstBad.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+
+  // 1) grava o lead na planilha (Google Apps Script Web App)
+  const data = new URLSearchParams();
+  data.append('timestamp', new Date().toLocaleString('pt-BR'));
+  fields.forEach(id=>{ data.append(id, document.getElementById(id).value.trim()); });
+  data.append('confirma', 'Sim');
+  if(SHEET_ENDPOINT && SHEET_ENDPOINT.indexOf('http') === 0){
+    fetch(SHEET_ENDPOINT, {method:'POST', mode:'no-cors', body:data}).catch(function(){});
+  }
+
+  // 2) mostra a tela de agradecimento
+  document.getElementById('formView').style.display = 'none';
+  document.getElementById('successView').classList.add('show');
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+</script>
+</body>
+</html>
