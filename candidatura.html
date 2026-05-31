@@ -29,10 +29,10 @@ body{background:var(--bg);color:var(--cream);font-family:var(--body);line-height
 .wrap{max-width:680px;margin:0 auto;padding:54px 24px 80px}
 
 .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:46px}
-.brand{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream);display:flex;align-items:center;gap:9px}
+.brand{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--cream);display:flex;align-items:center;gap:9px;text-decoration:none}
 .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint)}
-.back{font-family:var(--mono);font-size:12px;color:var(--soft);text-decoration:none}
-.back:hover{color:var(--mint)}
+.back{font-family:var(--mono);font-size:12px;color:var(--cream);text-decoration:none;border:1px solid var(--line-strong);border-radius:8px;padding:8px 14px;transition:border-color .2s,color .2s}
+.back:hover{color:var(--mint);border-color:var(--mint)}
 
 .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mint);display:flex;align-items:center;gap:12px;margin-bottom:18px}
 .eyebrow::before{content:"";width:30px;height:1px;background:var(--mint)}
@@ -84,8 +84,8 @@ footer{text-align:center;color:var(--faint);font-size:12px;margin-top:50px;font-
 
 <div class="wrap">
   <div class="top">
-    <div class="brand"><span class="dot"></span>Eduardo Gonçalves</div>
-    <a href="index.html" class="back">← voltar</a>
+    <a href="index.html" class="brand"><span class="dot"></span>Eduardo Gonçalves</a>
+    <a href="index.html" class="back">← Voltar ao site</a>
   </div>
 
   <div id="formView">
